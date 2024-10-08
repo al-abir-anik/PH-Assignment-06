@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 06</title>
+
+    <!-- Google Font CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Daisy Ui and Tailwind CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lexend font customization -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Lato"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-sans">
+    <header>
+      <nav class="navbar bg-base-100 w-11/12 h-20 mx-auto">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h7"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            >
+              <li><a>Homepage</a></li>
+              <li><a>Portfolio</a></li>
+              <li><a>About</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="navbar-center">
+          <a class="btn btn-ghost">
+            <img src="images/logo.webp" class="" />
+            <p class="text-2xl font-bold text-[#131313]">Peddy</p>
+          </a>
+        </div>
+
+        <div class="navbar-end">
+          <button class="btn btn-ghost btn-circle border">
+            <i class="fa-regular fa-user text-xl"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Hero Section Start -->
+      <div
+        class="w-10/12 h-[550px] mx-auto flex flex-col justify-between items-center"
+      >
+        <div class="w-full h-[350px] flex flex-col justify-around items-center">
+          <h6>
+            <span class="text-xl font-bold text-[#131313]/60"
+              >Bringing Families Together</span
+            >
+            ❤️‍🔥
+          </h6>
+          <h3 class="text-3xl font-black text-center text-[#131313]">
+            Your Path to Adoption <br />
+            Starts Here
+          </h3>
+          <p class="text-base text-center text-[#131313]/70">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a.
+          </p>
+          <button class="btn btn-success w-2/6 text-white font-bold">
+            View More
+          </button>
+        </div>
+        <img src="images/pet.webp" class="w-11/12" />
+      </div>
+    </header>
+
+    <!-- Main Section Start Here -->
+    <main class="w-10/12 h-auto mx-auto">
+      <section class="w-full h-[350px] flex flex-col justify-center gap-4 mt-4">
+        <div class="w-full h-[110px] space-y-4">
+          <h4 class="text-2xl font-extrabold text-center text-[#131313]">
+            Adopt Your Best Friend
+          </h4>
+          <p class="text-base text-center text-[#131313]/70">
+            A reader will be distracted by the readable content of a page when
+            looking at its layout.
+          </p>
+        </div>
+        <div
+          id="btn-categories"
+          class="flex justify-center flex-wrap gap-4"
+        ></div>
+      </section>
+
+      <!-- best deal section -->
+      <section>
+        <div class="flex justify-between items-center">
+          <h4 class="text-xl font-black text-[#131313]">Best Deal For you</h4>
+          <button class="btn bg-[#0E7A81] text-white">Sort by price</button>
+        </div>
+
+        <div class="w-full h-auto flex justify-between min-h-80">
+          <div id="card-container" class="w-2/3 flex-wrap"></div>
+
+          <!-- Loading Screen -->
+          <span
+            id="loading"
+            class="loading loading-infinity loading-lg hidden"
+          ></span>
+
+          <div
+            id="likeCard-container"
+            class="card w-1/4 h-auto border border-[#0E7A81]/15 p-4"
+          ></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <div class="btn btn-ghost">
+          <img src="images/logo.webp" class="" />
+          <p class="text-2xl font-bold text-[#131313]">Peddy</p>
+        </div>
+        <div>
+          <p>Location: av. Washington 165, NY CA 54003</p>
+          <p>Phone: +31 85 964 47 25</p>
+          <p>Email: info@yourdomain.com</p>
+          <p>Openings hours: 9.00 AM - 5.00 PM</p>
+        </div>
+        <div></div>
+      </div>
+
+      <div>
+        <h4>Useful Links</h4>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Animals</a>
+        <a href="#">Foundation</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <div>
+        <h4>Drop a Message</h4>
+      </div>
+    </footer>
+
+    <script src="scripts/api.js"></script>
+    <script src="scripts/utilities.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
