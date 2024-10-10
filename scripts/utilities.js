@@ -1,4 +1,3 @@
-
 // Categories button function
 function createButtons(buttonData) {
   const categories = document.getElementById("btn-categories");
@@ -6,11 +5,13 @@ function createButtons(buttonData) {
   buttonData.forEach((element) => {
     const buttonDiv = document.createElement("div");
     buttonDiv.innerHTML = `
-        <button onclick="loadCategoryCards('${element.category.toLowerCase()}')" class="btn bg-transparent border border-[#0E7A81]/15 w-auto h-auto px-8 py-3 flex">
+        <button id='btn-${
+          element.id
+        }' onclick="activeCategory('btn-${element.id}'); loadCategoryCards('${element.category.toLowerCase()}')" class="btn-category btn bg-transparent border border-[#0E7A81]/15 w-auto h-auto px-8 py-3 flex">
           <img class="w-10" src='${element.category_icon}'>
           <p class="text-xl font-bold text-[#131313]">${element.category}</p>
         </button>
-    `
+    `;
     categories.appendChild(buttonDiv);
   });
 }
@@ -20,13 +21,12 @@ function createButtons(buttonData) {
 function createCards(cardData) {
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = "";
-
-  showLoading();
-  hideLoading();
+  // showLoading();
+  // hideLoading();
 
   setTimeout(() => {
-    if (cardData === 0) {
-      cardContainer.innerHTML =`
+    if (cardData == 0) {
+      cardContainer.innerHTML = `
         <div class="w-2/3 h-auto mx-auto space-y-5 py-8">
           <img src="images/error.webp" class="w-10/12 mx-auto">
           <h3 class="text-3xl font-bold text-center text-[#131313]">No Information Available</h3>
@@ -35,10 +35,10 @@ function createCards(cardData) {
       `;
       return;
     }
-  
+
     cardData.forEach((element) => {
       const card = document.createElement("div");
-      card.id = `button-${element.petId}`;
+      // card.id = `button-${element.petId}`;
       card.classList.add(
         "card",
         "bg-transparent",
@@ -75,18 +75,18 @@ function createCards(cardData) {
       <hr class="w-full">
   
       <div>
-        <button class="btn btn-outline btn-accent border border-[#0E7A81]/15">
+        <button id="btn-like-${element.petId}" onclick="likeButton('${element.image}')" class="btn btn-outline btn-accent border border-[#0E7A81]/15">
           <i class="fa-regular fa-calendar-days"></i>
         </button>
-        <button class="btn btn-outline btn-accent border border-[#0E7A81]/15 font-bold text-base">
+        <button id="btn-adopt-${element.petId}" class="btn btn-outline btn-accent border border-[#0E7A81]/15 font-bold text-base">
           Adopt
         </button>
-        <button class="btn btn-outline btn-accent border border-[#0E7A81]/15 font-bold text-base">
+        <button id="btn-details-${element.petId}" onclick="loadPetDetails('${element.petId}')" class="btn btn-outline btn-accent border border-[#0E7A81]/15 font-bold text-base">
           Details
         </button>
       </div>  
     `;
       cardContainer.appendChild(card);
     });
-  }, 2000);
+  }, 0);
 }

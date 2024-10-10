@@ -148,16 +148,33 @@
           <!-- Loading Screen -->
           <span
             id="loading"
-            class="loading loading-infinity loading-lg hidden"
+            class="loading loading-bars loading-lg hidden mx-auto text-6xl"
           ></span>
 
           <div
             id="likeCard-container"
-            class="card w-1/4 h-auto border border-[#0E7A81]/15 p-4"
+            class="card w-1/4 h-auto border border-[#0E7A81]/15 py-4 px-2"
           ></div>
         </div>
       </section>
+
+      <!-- Modal For Pet Details Button -->
+      <!-- <button class="btn hidden" onclick="pet-details-modal.showModal()">
+        open modal
+      </button> -->
+      <dialog id="pet-details-modal" class="modal">
+        <div class="modal-box">
+          <div id="modal-container"></div>
+
+          <div class="modal-action">
+            <form method="dialog">
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </main>
+
 
     <footer>
       <div>

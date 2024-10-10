@@ -29,3 +29,12 @@ const loadCategoryCards = (categoryId) => {
   .then(data => createCards(data.data))
   .catch(error => console.error("Fetching data:", error));
 }
+
+
+// Fetch pet details by Id
+const loadPetDetails = (id) => {
+  fetch(`https://openapi.programming-hero.com/api/peddy/pet/${id}`)
+  .then(response => response.json())
+  .then(data => detailsButton(data.petData))
+  .catch(error => console.error("Fetching data:", error));
+}
