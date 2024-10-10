@@ -139,7 +139,7 @@
       <section>
         <div class="flex justify-between items-center">
           <h4 class="text-xl font-black text-[#131313]">Best Deal For you</h4>
-          <button class="btn bg-[#0E7A81] text-white">Sort by price</button>
+          <button onclick="sortCardsByPrice()" class="btn bg-[#0E7A81] text-white">Sort by price</button>
         </div>
 
         <div class="w-full h-auto flex justify-between min-h-80">
@@ -159,16 +159,13 @@
       </section>
 
       <!-- Modal For Pet Details Button -->
-      <!-- <button class="btn hidden" onclick="pet-details-modal.showModal()">
-        open modal
-      </button> -->
       <dialog id="pet-details-modal" class="modal">
         <div class="modal-box">
           <div id="modal-container"></div>
 
-          <div class="modal-action">
+          <div class="modal-action block">
             <form method="dialog">
-              <button class="btn">Close</button>
+              <button class="btn w-full">Close</button>
             </form>
           </div>
         </div>

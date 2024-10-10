@@ -5,9 +5,7 @@ function createButtons(buttonData) {
   buttonData.forEach((element) => {
     const buttonDiv = document.createElement("div");
     buttonDiv.innerHTML = `
-        <button id='btn-${
-          element.id
-        }' onclick="activeCategory('btn-${element.id}'); loadCategoryCards('${element.category.toLowerCase()}')" class="btn-category btn bg-transparent border border-[#0E7A81]/15 w-auto h-auto px-8 py-3 flex">
+        <button id='btn-${element.id}' onclick="activeCategory('btn-${element.id}'); loadCategoryCards('${element.category.toLowerCase()}')" class="btn-category btn bg-transparent border border-[#0E7A81]/15 w-auto h-auto px-8 py-3 flex">
           <img class="w-10" src='${element.category_icon}'>
           <p class="text-xl font-bold text-[#131313]">${element.category}</p>
         </button>
@@ -56,19 +54,19 @@ function createCards(cardData) {
         <h4 class="text-xl font-bold text-[#131313]">${element.pet_name}</h4>
         <p class="text-base text-[#131313]/70">
           <i class="fa-regular fa-calendar-days"></i>
-          Breed: ${element.breed}
+          Breed: ${element.breed != null && element.breed != undefined ? element.breed : "Not Given"}
         </p>
         <p class="text-base text-[#131313]/70">
           <i class="fa-regular fa-calendar-days"></i>
-          Birth: ${element.date_of_birth}
+          Birth: ${element.date_of_birth != null && element.date_of_birth != undefined ? element.date_of_birth : "Not Given"}
         </p>
         <p class="text-base text-[#131313]/70">
           <i class="fa-regular fa-calendar-days"></i>
-          Gender: ${element.gender}
+          Gender: ${element.gender != null && element.gender != undefined ? element.gender : "Not Given"}
         </p>
         <p class="text-base text-[#131313]/70">
           <i class="fa-regular fa-calendar-days"></i>
-          Price: ${element.price}
+          Price: ${element.price != null && element.price != undefined ? element.price : "Not Given"}
         </p>
       </div>
       

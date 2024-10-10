@@ -15,9 +15,7 @@ const loadAllCards = () => {
     fetch('https://openapi.programming-hero.com/api/peddy/pets')
     .then((response) => response.json())
     .then((data) => createCards(data.pets))
-    .catch((error) => console.error("Fetching data:", error));
-
-    
+    .catch((error) => console.error("Fetching data:", error));   
 }
 loadAllCards();
 
@@ -37,4 +35,17 @@ const loadPetDetails = (id) => {
   .then(response => response.json())
   .then(data => detailsButton(data.petData))
   .catch(error => console.error("Fetching data:", error));
+}
+
+
+
+// Sorting
+const sortCardsByPrice = () => {
+  fetch('https://openapi.programming-hero.com/api/peddy/pets')
+  .then((response) => response.json())
+  .then((data) => {
+    const sortedPets = data.pets.sort((a, b) => b.price - a.price);
+    createCards(sortedPets);
+  })
+  .catch((error) => console.error("Fetching data:", error));   
 }

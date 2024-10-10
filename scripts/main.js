@@ -48,24 +48,33 @@ function detailsButton(urlId) {
   const modalContainer = document.getElementById("modal-container");
 
   modalContainer.innerHTML = `
-    <img src="${urlId.image}"/>
-    <h3>${urlId.pet_name}</h3>
+    <img src="${urlId.image}" class="rounded-xl"/>
+    <h3 class="text-xl font-bold text-[#131313]">${urlId.pet_name}</h3>
     <div>
       <div>
-        <p><i class="fa-regular fa-calendar-days"></i> Breed: ${urlId.breed}</p>
-        <p><i class="fa-regular fa-calendar-days"></i> Gender: ${urlId.gender}</p>
-        <p><i class="fa-regular fa-calendar-days"></i> Vaccinated status: ${urlId.vaccinated_status}</p>
+        <p class="text-base text-[#131313]/70"><i class="fa-regular fa-calendar-days"></i> Breed: ${urlId.breed}</p>
+        <p class="text-base text-[#131313]/70"><i class="fa-regular fa-calendar-days"></i> Gender: ${urlId.gender}</p>
+        <p class="text-base text-[#131313]/70"><i class="fa-regular fa-calendar-days"></i> Vaccinated status: ${urlId.vaccinated_status}</p>
       </div>
       <div>
-        <p><i class="fa-regular fa-calendar-days"></i> Birth: ${urlId.date_of_birth}</p>
-        <p><i class="fa-regular fa-calendar-days"></i> Price: ${urlId.price}</p>
+        <p class="text-base text-[#131313]/70"><i class="fa-regular fa-calendar-days"></i> Birth: ${urlId.date_of_birth}</p>
+        <p class="text-base text-[#131313]/70"><i class="fa-regular fa-calendar-days"></i> Price: ${urlId.price}</p>
       </div>
     </div>
+    <hr class="w-full">
     <div>
-      <h5>Details Information</h5>
-      <p>${urlId.pet_details}</p>
+      <h5 class="text-base font-semibold text-[#131313]">Details Information</h5>
+      <p class="text-sm text-[#131313]/70">${urlId.pet_details}</p>
     </div>
   `;
 
   document.getElementById("pet-details-modal").showModal();
 }
+
+
+// Sorting Price low to high
+// function sortPrice() {
+//   const sortedData = price.sort((a, b) => a.price - b.price);
+//     renderCards(sortedData);
+// }
+// renderCards(price);
