@@ -73,13 +73,13 @@ function createCards(cardData) {
       <hr class="w-full">
   
       <div>
-        <button id="btn-like-${element.petId}" onclick="likeButton('${element.image}')" class="btn btn-outline btn-accent border border-[#0E7A81]/15">
+        <button onclick="likeButton('${element.image}')" class="btn btn-outline btn-accent border border-[#0E7A81]/15">
           <i class="fa-regular fa-calendar-days"></i>
         </button>
-        <button id="btn-adopt-${element.petId}" class="btn btn-outline btn-accent border border-[#0E7A81]/15 font-bold text-base">
+        <button onclick="adoptButton()" class="btn btn-outline btn-accent border border-[#0E7A81]/15 font-bold text-base">
           Adopt
         </button>
-        <button id="btn-details-${element.petId}" onclick="loadPetDetails('${element.petId}')" class="btn btn-outline btn-accent border border-[#0E7A81]/15 font-bold text-base">
+        <button onclick="loadPetDetails('${element.petId}')" class="btn btn-outline btn-accent border border-[#0E7A81]/15 font-bold text-base">
           Details
         </button>
       </div>  

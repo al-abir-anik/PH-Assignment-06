@@ -45,7 +45,7 @@ function likeButton(imageUrl) {
 
 // Details button functionality
 function detailsButton(urlId) {
-  const modalContainer = document.getElementById("modal-container");
+  const modalContainer = document.getElementById("details-modal-container");
 
   modalContainer.innerHTML = `
     <img src="${urlId.image}" class="rounded-xl"/>
@@ -72,9 +72,22 @@ function detailsButton(urlId) {
 }
 
 
-// Sorting Price low to high
-// function sortPrice() {
-//   const sortedData = price.sort((a, b) => a.price - b.price);
-//     renderCards(sortedData);
-// }
-// renderCards(price);
+// Pet Adopt Button Functionality
+function adoptButton() {
+  const adoptModal = document.getElementById('pet-adopt-modal');
+  adoptModal.showModal();
+
+  let countdown = 3 ;
+  const countdownP = document.getElementById("countdown");
+  countdownP.innerText = countdown ;
+
+  const countdownInterval = setInterval(() => {
+    countdown--;
+    countdownP.innerText = countdown ;
+
+    if (countdown == 0) {
+      clearInterval(countdownInterval);
+      adoptModal.close();
+    }
+  }, 1000);
+}
