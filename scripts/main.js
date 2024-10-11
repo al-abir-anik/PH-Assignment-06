@@ -1,3 +1,6 @@
+
+
+// loading function
 function showLoading() {
   document.getElementById("loading").classList.remove("hidden");
   document.getElementById("card-container").classList.add("hidden");
@@ -10,6 +13,8 @@ function hideLoading() {
     document.getElementById("likeCard-container").classList.remove("hidden");
   }, 2000);
 }
+
+
 
 // active category button function
 function activeCategory(categoryId) {
@@ -32,16 +37,21 @@ function activeCategory(categoryId) {
   );
 }
 
+
+
 // Like Button Functionality
 function likeButton(imageUrl) {
   const likecardContainer = document.getElementById("likeCard-container");
 
   const img = document.createElement("img");
   img.src = imageUrl;
-  img.classList.add("w-full", "rounded-lg");
+  img.classList.add("w-fit", "rounded-lg");
 
   likecardContainer.appendChild(img);
 }
+
+
+
 
 // Details button functionality
 function detailsButton(urlId) {
@@ -72,18 +82,19 @@ function detailsButton(urlId) {
 }
 
 
+
 // Pet Adopt Button Functionality
 function adoptButton() {
-  const adoptModal = document.getElementById('pet-adopt-modal');
+  const adoptModal = document.getElementById("pet-adopt-modal");
   adoptModal.showModal();
 
-  let countdown = 3 ;
+  let countdown = 3;
   const countdownP = document.getElementById("countdown");
-  countdownP.innerText = countdown ;
+  countdownP.innerText = countdown;
 
   const countdownInterval = setInterval(() => {
     countdown--;
-    countdownP.innerText = countdown ;
+    countdownP.innerText = countdown;
 
     if (countdown == 0) {
       clearInterval(countdownInterval);

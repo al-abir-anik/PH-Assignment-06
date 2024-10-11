@@ -1,3 +1,5 @@
+
+
 // Categories button function
 function createButtons(buttonData) {
   const categories = document.getElementById("btn-categories");
@@ -5,7 +7,9 @@ function createButtons(buttonData) {
   buttonData.forEach((element) => {
     const buttonDiv = document.createElement("div");
     buttonDiv.innerHTML = `
-        <button id='btn-${element.id}' onclick="activeCategory('btn-${element.id}'); loadCategoryCards('${element.category.toLowerCase()}')" class="btn-category btn bg-transparent border border-[#0E7A81]/15 w-auto h-auto px-8 py-3 flex">
+        <button id='btn-${element.id}' onclick="activeCategory('btn-${
+      element.id
+    }'); loadCategoryCards('${element.category.toLowerCase()}')" class="btn-category btn bg-transparent border border-[#0E7A81]/15 w-auto h-auto px-8 py-3 flex">
           <img class="w-10" src='${element.category_icon}'>
           <p class="text-xl font-bold text-[#131313]">${element.category}</p>
         </button>
@@ -15,12 +19,14 @@ function createButtons(buttonData) {
 }
 
 
+
+
 // Load Cards function
 function createCards(cardData) {
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = "";
-  // showLoading();
-  // hideLoading();
+  showLoading();
+  hideLoading();
 
   setTimeout(() => {
     if (cardData == 0) {
@@ -51,40 +57,62 @@ function createCards(cardData) {
       </figure>
   
       <div class="h-auto space-y-1">
-        <h4 class="text-xl font-bold text-[#131313]">${element.pet_name}</h4>
+        <h4 class="text-xl font-bold text-[#131313] pt-2">${
+          element.pet_name
+        }</h4>
         <p class="text-base text-[#131313]/70">
-          <i class="fa-regular fa-calendar-days"></i>
-          Breed: ${element.breed != null && element.breed != undefined ? element.breed : "Not Given"}
+          <i class="fa-solid fa-paw"></i>
+          Breed:&nbsp;&nbsp; ${
+            element.breed != null && element.breed != undefined
+              ? element.breed
+              : "Not Given"
+          }
         </p>
         <p class="text-base text-[#131313]/70">
           <i class="fa-regular fa-calendar-days"></i>
-          Birth: ${element.date_of_birth != null && element.date_of_birth != undefined ? element.date_of_birth : "Not Given"}
+          Birth:&nbsp;&nbsp; ${
+            element.date_of_birth != null && element.date_of_birth != undefined
+              ? element.date_of_birth
+              : "Not Given"
+          }
         </p>
         <p class="text-base text-[#131313]/70">
-          <i class="fa-regular fa-calendar-days"></i>
-          Gender: ${element.gender != null && element.gender != undefined ? element.gender : "Not Given"}
+          <i class="fa-solid fa-venus"></i>
+          Gender:&nbsp;&nbsp; ${
+            element.gender != null && element.gender != undefined
+              ? element.gender
+              : "Not Given"
+          }
         </p>
         <p class="text-base text-[#131313]/70">
-          <i class="fa-regular fa-calendar-days"></i>
-          Price: ${element.price != null && element.price != undefined ? element.price : "Not Given"}
+          <i class="fa-solid fa-dollar-sign"></i>
+          Price:&nbsp;&nbsp; ${
+            element.price != null && element.price != undefined
+              ? element.price
+              : "Not Given"
+          }
         </p>
       </div>
       
-      <hr class="w-full">
+      <hr class="w-full my-3">
   
-      <div>
-        <button onclick="likeButton('${element.image}')" class="btn btn-outline btn-accent border border-[#0E7A81]/15">
-          <i class="fa-regular fa-calendar-days"></i>
+      <div class="flex justify-between">
+        <button onclick="likeButton('${
+          element.image
+        }')" class="btn btn-outline btn-accent border border-[#0E7A81]/15">
+          <i class="fa-solid fa-thumbs-up text-lg"></i>
         </button>
         <button onclick="adoptButton()" class="btn btn-outline btn-accent border border-[#0E7A81]/15 font-bold text-base">
           Adopt
         </button>
-        <button onclick="loadPetDetails('${element.petId}')" class="btn btn-outline btn-accent border border-[#0E7A81]/15 font-bold text-base">
+        <button onclick="loadPetDetails('${
+          element.petId
+        }')" class="btn btn-outline btn-accent border border-[#0E7A81]/15 font-bold text-base">
           Details
         </button>
       </div>  
     `;
       cardContainer.appendChild(card);
     });
-  }, 0);
+  }, 2000);
 }

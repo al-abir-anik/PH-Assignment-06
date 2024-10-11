@@ -1,3 +1,5 @@
+
+
 // Fetch All Pet Categories
 const loadCategories = () => {
   fetch("https://openapi.programming-hero.com/api/peddy/categories")
@@ -6,6 +8,8 @@ const loadCategories = () => {
     .catch((error) => console.error("Fetching data:", error));
 };
 loadCategories();
+
+
 
 // Fetch All Pets
 const loadAllCards = () => {
@@ -16,6 +20,8 @@ const loadAllCards = () => {
 };
 loadAllCards();
 
+
+
 // Fetch Pets by Category
 const loadCategoryCards = (categoryId) => {
   fetch(`https://openapi.programming-hero.com/api/peddy/category/${categoryId}`)
@@ -23,6 +29,8 @@ const loadCategoryCards = (categoryId) => {
     .then((data) => createCards(data.data))
     .catch((error) => console.error("Fetching data:", error));
 };
+
+
 
 // Fetch pet details by Id
 const loadPetDetails = (id) => {
@@ -34,8 +42,7 @@ const loadPetDetails = (id) => {
 
 
 
-
-// Sorting
+// Sorting prts by price
 const sortCardsByPrice = () => {
   fetch("https://openapi.programming-hero.com/api/peddy/pets")
     .then((response) => response.json())
